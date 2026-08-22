@@ -70,7 +70,7 @@ const newPdfCode = `// ═══════════════ DRAW THE PD
   const textX = marginX + 70;
   const textW = usableW - 140;
   doc.font("Helvetica-Bold").fontSize(16).fillColor("#000")
-    .text((settings.schoolName || "NURUL-HAQ ISLAMIC ACADEMY").toUpperCase(), textX, y + 10, { width: textW, align: "center" });
+    .text((settings.schoolName || "HURSBOND ACADEMY").toUpperCase(), textX, y + 10, { width: textW, align: "center" });
   doc.font("Helvetica").fontSize(9).fillColor("#000")
     .text((settings.address || "NEW JERSEY, ANGOLA").toUpperCase(), textX, y + 28, { width: textW, align: "center" });
   doc.font("Helvetica").fontSize(9).fillColor("#000")
@@ -320,7 +320,7 @@ const newPdfCode = `// ═══════════════ DRAW THE PD
   doc.circle(stampX, stampY, 25).lineWidth(1).stroke(BORDER);
   doc.circle(stampX, stampY, 23).lineWidth(1).stroke(BORDER);
   doc.font("Helvetica-Bold").fontSize(5).fillColor(BORDER)
-    .text("NURUL-HAQ ISLAMIC ACADEMY", stampX - 22, stampY - 15, { width: 44, align: "center" });
+    .text("HURSBOND ACADEMY", stampX - 22, stampY - 15, { width: 44, align: "center" });
   doc.text("Official Stamp", stampX - 22, stampY - 5, { width: 44, align: "center" });
   doc.text("PRINCIPAL", stampX - 22, stampY + 5, { width: 44, align: "center" });
   
