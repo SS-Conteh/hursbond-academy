@@ -6,11 +6,11 @@ const { protect, authorize } = require("../middleware/auth");
 
 const router = express.Router();
 
-// Student IDs are auto-generated as NHIA-001, NHIA-002, … — never typed by
-// hand. The next number is one more than the highest NHIA-### currently in
+// Student IDs are auto-generated as HAS-001, HAS-002, … — never typed by
+// hand. The next number is one more than the highest HAS-### currently in
 // use, so it stays correct even if students were deleted or an older
-// non-NHIA admissionNo format exists from before this feature.
-const ADMISSION_PREFIX = "NHIA-";
+// non-HAS admissionNo format exists from before this feature.
+const ADMISSION_PREFIX = "HAS-";
 async function generateNextAdmissionNo() {
   const students = await User.find({
     role: "student",

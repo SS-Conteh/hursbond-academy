@@ -105,7 +105,7 @@ const PORT = process.env.PORT || 5000;
 
 connectDB().then(() => {
   app.listen(PORT, () => {
-    console.log(`[NHIA-SMS] API server running on http://localhost:${PORT}`);
+    console.log(`[HURSBOND-SMS] API server running on http://localhost:${PORT}`);
     startKeepAlive();
   });
 });
@@ -123,7 +123,7 @@ function startKeepAlive() {
   const selfUrl = process.env.RENDER_EXTERNAL_URL || process.env.SELF_URL;
   if (!selfUrl) {
     console.warn(
-      "[NHIA-SMS] Keep-alive skipped: no RENDER_EXTERNAL_URL or SELF_URL set. " +
+      "[HURSBOND-SMS] Keep-alive skipped: no RENDER_EXTERNAL_URL or SELF_URL set. " +
         "The service WILL spin down after ~15 min idle and cold-start on the next visit.",
     );
     return;
@@ -142,13 +142,13 @@ function startKeepAlive() {
     fetch(url)
       .then((res) => {
         console.log(
-          `[NHIA-SMS] Keep-alive ping @ ${startedAt} -> ${res.status}`,
+          `[HURSBOND-SMS] Keep-alive ping @ ${startedAt} -> ${res.status}`,
         );
         setTimeout(ping, PING_INTERVAL_MS);
       })
       .catch((err) => {
         console.error(
-          `[NHIA-SMS] Keep-alive ping @ ${startedAt} FAILED (retrying in 30s):`,
+          `[HURSBOND-SMS] Keep-alive ping @ ${startedAt} FAILED (retrying in 30s):`,
           err.message,
         );
         setTimeout(ping, RETRY_DELAY_MS);
@@ -156,5 +156,5 @@ function startKeepAlive() {
   }
 
   setTimeout(ping, PING_INTERVAL_MS);
-  console.log(`[NHIA-SMS] Keep-alive enabled, pinging ${url} every 7 min`);
+  console.log(`[HURSBOND-SMS] Keep-alive enabled, pinging ${url} every 7 min`);
 }

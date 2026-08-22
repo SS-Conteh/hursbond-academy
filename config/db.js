@@ -5,7 +5,7 @@ async function connectDB() {
   const uri = process.env.MONGO_URI;
   if (!uri) {
     console.error(
-      "[NHIA-SMS] MONGO_URI is not set",
+      "[HURSBOND-SMS] MONGO_URI is not set",
     );
     process.exit(1);
   }
@@ -16,11 +16,11 @@ async function connectDB() {
       serverSelectionTimeoutMS: 8000,
     });
     console.log(
-      `[NHIA-SMS] MongoDB connected -> ${mongoose.connection.host}/${mongoose.connection.name} (${Date.now() - start}ms)`,
+      `[HURSBOND-SMS] MongoDB connected -> ${mongoose.connection.host}/${mongoose.connection.name} (${Date.now() - start}ms)`,
     );
   } catch (err) {
     console.error(
-      `[NHIA-SMS] MongoDB connection error after ${Date.now() - start}ms:`,
+      `[HURSBOND-SMS] MongoDB connection error after ${Date.now() - start}ms:`,
       err.message,
     );
     process.exit(1);
